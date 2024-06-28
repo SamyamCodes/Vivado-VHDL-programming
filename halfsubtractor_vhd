@@ -1,0 +1,37 @@
+library IEEE;
+use IEEE.Std_logic_1164.all;
+use IEEE.Numeric_Std.all;
+entity halfsubtractor_56_tb is
+end;
+architecture bench of halfsubtractor_56_tb is
+component halfsubtractor_56
+Port ( A : in STD_LOGIC;
+B : in STD_LOGIC;
+Diff : out STD_LOGIC;
+Borrow : out STD_LOGIC);
+end component;
+signal A: STD_LOGIC;
+signal B: STD_LOGIC;
+signal Diff: STD_LOGIC;
+signal Borrow: STD_LOGIC;
+begin
+uut: halfsubtractor_56 port map ( A => A,
+B => B,
+Diff => Diff,
+Borrow => Borrow );
+stimulus: process
+begin
+a<= '0';
+b<= '0';
+wait for 10ns;
+a<= '0';
+b<= '0';
+wait for 10ns;
+a<= '0';b<= '0';
+wait for 10ns;
+a<= '0';
+b<= '0';
+wait for 10ns;
+wait;
+end process;
+end;
